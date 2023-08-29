@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="autoIncrementShoeID">
+        <s:complexType />
+      </s:element>
+      <s:element name="autoIncrementShoeIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="autoIncrementShoeIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addShoe">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="price" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stock" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addShoeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addShoeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateShoe">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="price" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stock" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateShoeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateShoeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteShoe">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteShoeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteShoeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchShoeName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchShoeNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchShoeNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="qtn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addPreOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="qtn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addPreOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addPreOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchSupp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchSuppResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchSuppResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="autoIncrementShoeIDSoapIn">
+    <wsdl:part name="parameters" element="tns:autoIncrementShoeID" />
+  </wsdl:message>
+  <wsdl:message name="autoIncrementShoeIDSoapOut">
+    <wsdl:part name="parameters" element="tns:autoIncrementShoeIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="addShoeSoapIn">
+    <wsdl:part name="parameters" element="tns:addShoe" />
+  </wsdl:message>
+  <wsdl:message name="addShoeSoapOut">
+    <wsdl:part name="parameters" element="tns:addShoeResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateShoeSoapIn">
+    <wsdl:part name="parameters" element="tns:updateShoe" />
+  </wsdl:message>
+  <wsdl:message name="updateShoeSoapOut">
+    <wsdl:part name="parameters" element="tns:updateShoeResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteShoeSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteShoe" />
+  </wsdl:message>
+  <wsdl:message name="deleteShoeSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteShoeResponse" />
+  </wsdl:message>
+  <wsdl:message name="searchShoeNameSoapIn">
+    <wsdl:part name="parameters" element="tns:searchShoeName" />
+  </wsdl:message>
+  <wsdl:message name="searchShoeNameSoapOut">
+    <wsdl:part name="parameters" element="tns:searchShoeNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="addOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:addOrder" />
+  </wsdl:message>
+  <wsdl:message name="addOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:addOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="addPreOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:addPreOrder" />
+  </wsdl:message>
+  <wsdl:message name="addPreOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:addPreOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="searchSuppSoapIn">
+    <wsdl:part name="parameters" element="tns:searchSupp" />
+  </wsdl:message>
+  <wsdl:message name="searchSuppSoapOut">
+    <wsdl:part name="parameters" element="tns:searchSuppResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="autoIncrementShoeID">
+      <wsdl:input message="tns:autoIncrementShoeIDSoapIn" />
+      <wsdl:output message="tns:autoIncrementShoeIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addShoe">
+      <wsdl:input message="tns:addShoeSoapIn" />
+      <wsdl:output message="tns:addShoeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateShoe">
+      <wsdl:input message="tns:updateShoeSoapIn" />
+      <wsdl:output message="tns:updateShoeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteShoe">
+      <wsdl:input message="tns:deleteShoeSoapIn" />
+      <wsdl:output message="tns:deleteShoeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchShoeName">
+      <wsdl:input message="tns:searchShoeNameSoapIn" />
+      <wsdl:output message="tns:searchShoeNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addOrder">
+      <wsdl:input message="tns:addOrderSoapIn" />
+      <wsdl:output message="tns:addOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addPreOrder">
+      <wsdl:input message="tns:addPreOrderSoapIn" />
+      <wsdl:output message="tns:addPreOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchSupp">
+      <wsdl:input message="tns:searchSuppSoapIn" />
+      <wsdl:output message="tns:searchSuppSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="autoIncrementShoeID">
+      <soap:operation soapAction="http://tempuri.org/autoIncrementShoeID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addShoe">
+      <soap:operation soapAction="http://tempuri.org/addShoe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateShoe">
+      <soap:operation soapAction="http://tempuri.org/updateShoe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteShoe">
+      <soap:operation soapAction="http://tempuri.org/deleteShoe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchShoeName">
+      <soap:operation soapAction="http://tempuri.org/searchShoeName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addOrder">
+      <soap:operation soapAction="http://tempuri.org/addOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPreOrder">
+      <soap:operation soapAction="http://tempuri.org/addPreOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchSupp">
+      <soap:operation soapAction="http://tempuri.org/searchSupp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="autoIncrementShoeID">
+      <soap12:operation soapAction="http://tempuri.org/autoIncrementShoeID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addShoe">
+      <soap12:operation soapAction="http://tempuri.org/addShoe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateShoe">
+      <soap12:operation soapAction="http://tempuri.org/updateShoe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteShoe">
+      <soap12:operation soapAction="http://tempuri.org/deleteShoe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchShoeName">
+      <soap12:operation soapAction="http://tempuri.org/searchShoeName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addOrder">
+      <soap12:operation soapAction="http://tempuri.org/addOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPreOrder">
+      <soap12:operation soapAction="http://tempuri.org/addPreOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchSupp">
+      <soap12:operation soapAction="http://tempuri.org/searchSupp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="https://localhost:44308/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="https://localhost:44308/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
